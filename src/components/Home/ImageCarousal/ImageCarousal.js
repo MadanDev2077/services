@@ -1,0 +1,34 @@
+import TitleWithDesc from "@/components/CommonLayouts/TitleWithDesc";
+import React from "react";
+import RoundedButton from "@/components/CommonLayouts/RoundedButton";
+
+const ImageCarousal = () => {
+  return (
+    <section className=" container">
+      <div className=" space-y-10">
+        <TitleWithDesc
+          ParentClass={"text-center"}
+          headerClass={" flex gap-y-2 flex-col"}
+          titles={[
+            {
+              title: "What They",
+              className: "blue-font",
+              stacktitle: false,
+            },
+            {
+              title: " Saying About Us",
+              className: "",
+              stacktitle: true,
+            },
+          ]}
+          desc={
+            "Join with another customer and client satisfied with our service"
+          }
+          descClass={"w-full md:w-[60%] lg:w-[40%] xl:w-[20%] inline-block "}
+        />
+      </div>
+    </section>
+  );
+};
+
+export default ImageCarousal;
