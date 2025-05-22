@@ -22,7 +22,7 @@ const SignUpCard = () => {
             />
             <div className=" absolute top-1/2 right-2 -translate-y-1/2 h-[85%]  ">
               <RoundedButton
-                classes="!bg-[#d1fe67] !text-black hover:!text-white !px-7 font-semibold h-full button-hover-black flex items-center justicy-center"
+                classes="!bg-[#d1fe67] focus:!text-white !text-black hover:!text-white !px-7 font-semibold h-full button-hover-black flex items-center justicy-center"
                 text={"Get Started"}
               />
             </div>
