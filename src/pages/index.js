@@ -1,4 +1,6 @@
+import SignUpCard from "@/components/CommonLayouts/SignUpCard";
 import Cards from "@/components/Home/CardsWithTitle/Cards";
+import Footer from "@/components/Home/Footer/Footer";
 import ImageCarousal from "@/components/Home/ImageCarousal/ImageCarousal";
 import ImageWithTitle from "@/components/Home/ImageWithTitle/ImageWithTitle";
 import LeftImageSection from "@/components/Home/LeftImageSection/LeftImageSection";
@@ -24,6 +26,7 @@ export default function Home() {
       <ImageWithTitle />
       <RightIMage />
       <ImageCarousal />
+      <Footer />
     </div>
   );
 }
