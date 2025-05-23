@@ -10,7 +10,7 @@ const TitleWithDesc = ({
 }) => {
   return (
     <div className={`${ParentClass} space-y-4`}>
-      <h3 className={`${headerClass} section-title`}>
+      <h3 className={`section-title ${headerClass} `}>
         {titles?.map((item, index) => (
           <span
             key={index}

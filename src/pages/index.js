@@ -1,4 +1,5 @@
 import SignUpCard from "@/components/CommonLayouts/SignUpCard";
+import Banner from "@/components/Home/Banner/Banner";
 import Cards from "@/components/Home/CardsWithTitle/Cards";
 import Footer from "@/components/Home/Footer/Footer";
 import ImageCarousal from "@/components/Home/ImageCarousal/ImageCarousal";
@@ -20,13 +21,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <main>
+      <Banner />
       <Cards />
       <LeftImageSection />
       <ImageWithTitle />
       <RightIMage />
       <ImageCarousal />
       <Footer />
-    </div>
+    </main>
   );
 }

@@ -49,6 +49,9 @@ body {
 .section-title {
   @apply font-bold text-[22px] sm:text-2xl lg:text-3xl xl:text-4xl space-y-2;
 }
+.banner-title {
+  @apply font-bold text-[24px] sm:text-3xl lg:text-4xl xl:text-5xl space-y-2;
+}
 .logo-font {
   @apply font-semibold text-white text-lg md:text-2xl lg:text-3xl;
 }
