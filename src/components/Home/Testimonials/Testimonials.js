@@ -50,7 +50,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="py-2 sm:py-3 md:py-5 lg:py-7 xl:py-8 overflow-x-hidden">
+    <div className="pb-2 sm:pb-3 md:pb-5 lg:pb-7 xl:pb-8 overflow-x-hidden">
       <Swiper
         modules={[Pagination]}
         spaceBetween={30}

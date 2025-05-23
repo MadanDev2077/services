@@ -29,7 +29,7 @@ const Cards = () => {
         }
         // descClass={"w-full md:w-[60%] lg:w-[80%] xl:w-[70%] inline-block "}
       />{" "}
-      <div className="py-10 sm:py-12 md:py-14 lg:py-16  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-4 gap-x-10">
+      <div className="pt-10 sm:pt-12 md:pt-14 lg:pt-16  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-4 gap-x-10">
         <Card
           Icon={
             <Laptop

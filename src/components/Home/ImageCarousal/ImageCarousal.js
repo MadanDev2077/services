@@ -10,11 +10,11 @@ const ImageCarousal = () => {
         <div className=" space-y-10">
           <TitleWithDesc
             ParentClass={"text-center"}
-            headerClass={" flex gap-y-2 flex-col"}
+            headerClass={" flex  md:gap-y-2 flex-col"}
             titles={[
               {
                 title: "What They",
-                className: "blue-font",
+                className: "blue-font !mb-0",
                 stacktitle: false,
               },
               {
