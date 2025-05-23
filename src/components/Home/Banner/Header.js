@@ -47,7 +47,7 @@ export default function Header() {
             <a
               key={link}
               href={`#${link.toLowerCase().replace(/\s+/g, "")}`}
-              className=" text-sm font-medium text-[#ffffff82] transition-all duration-300 ease-in hover:text-white"
+              className=" text-sm font-medium text-[#ffffffb4] transition-all duration-200  hover:text-white hover:font-medium"
             >
               {link}
             </a>
@@ -73,10 +73,10 @@ export default function Header() {
         {isOpen && (
           <motion.div
             ref={menuRef}
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3 }}
+            initial={{ clipPath: "inset(0 0 0 100%)", opacity: 0 }}
+            animate={{ clipPath: "inset(0 0 0 0%)", opacity: 1 }}
+            exit={{ clipPath: "inset(0 0 0 100%)", opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             className="absolute top-0 right-0 w-3/4 h-screen bg-[#252529] shadow-lg flex flex-col items-start gap-6 px-6 pt-20 z-40"
           >
             {navLinks.map((link) => (
