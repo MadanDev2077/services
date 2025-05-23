@@ -12,8 +12,8 @@ const TitlewithButton = ({
   descchildClass,
 }) => {
   return (
-    <div className=" flex   gap-x-2 flex-col md:flex-row justify-between gap-y-3 ">
-      <h2 className={`section-title ${headerClass}`}>
+    <div className=" flex   gap-x-2 flex-col lg:flex-row justify-between gap-y-3   ">
+      <h2 className={`section-title flex-1 ${headerClass}`}>
         {titles?.map((item, index) => (
           <span
             key={index}
@@ -26,7 +26,7 @@ const TitlewithButton = ({
         ))}
       </h2>
 
-      <div className={` flex md:justify-center ${descParentClass}`}>
+      <div className={` flex md:justify-center flex-1 ${descParentClass}`}>
         <div
           className={`desc w-full sm:w-[80%]  flex flex-col gap-3 lg:gap-4 xl:gap-5 ${descchildClass}`}
         >

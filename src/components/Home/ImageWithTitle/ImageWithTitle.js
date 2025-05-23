@@ -11,8 +11,8 @@ const ImageWithTitle = () => {
         classes={"!bg-[#c9f563] !text-black"}
         descClass={"!text-white"}
         ParentClass={"text-left"}
-        headerClass={" flex gap-y-1 flex-col"}
-        descchildClass={" ml-0 md:pl-[5%] lg:pl-[10%]"}
+        headerClass={" flex flex-col "}
+        descParentClass={"!justify-start lg:!justify-end "}
         titles={[
           {
             title: "Coast To coast",
