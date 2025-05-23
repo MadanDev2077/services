@@ -5,7 +5,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="container bg-[#181818] !mt-40 sm:!mt-50  md:!mt-[170px] lg:!mt-[220px] xl:!mt-[230px] ">
+    <footer className="container bg-[#181818] !mt-30 sm:!mt-40  md:!mt-[120px] lg:!mt-[160px] xl:!mt-[170px] ">
       <SignUpCard />
       <div className="flex flex-col md:flex-row gap-y-5 sm:gap-y-10 gap-x-2 items-baseline py-10 md:py-14 lg:py-16 xl:py-20">
         <div className="space-y-2 md:space-y-3 xl:space-y-4 md:w-[30%]">

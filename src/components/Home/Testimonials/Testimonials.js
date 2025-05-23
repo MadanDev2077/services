@@ -50,7 +50,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="py-12 overflow-x-hidden">
+    <div className="py-2 sm:py-3 md:py-5 lg:py-7 xl:py-8 overflow-x-hidden">
       <Swiper
         modules={[Pagination]}
         spaceBetween={30}
@@ -58,7 +58,7 @@ export default function Testimonials() {
         centeredSlides={true}
         loop={true}
         pagination={{ clickable: true }}
-        className="mySwiper !pb-20"
+        className="mySwiper !pb-10 sm:!pb-14 md:!pb-16 lg:!pb-18 xl:!pb-20"
         breakpoints={{
           0: { slidesPerView: 1 },
           900: { slidesPerView: 2 },
