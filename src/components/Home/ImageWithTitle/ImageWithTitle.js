@@ -16,7 +16,7 @@ const ImageWithTitle = () => {
         titles={[
           {
             title: "Coast To coast",
-            className: "blue-font",
+            className: "blue-font !mb-0 md:!mb-2",
             stacktitle: false,
           },
           {

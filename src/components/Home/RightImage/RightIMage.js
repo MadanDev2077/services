@@ -12,11 +12,11 @@ const RightIMage = () => {
         <div className=" space-y-10 mr-0 md:mr-3 lg:mr-4 py-0 lg:py-10 xl:py-14">
           <TitleWithDesc
             ParentClass={"text-left"}
-            headerClass={" flex gap-y-2 flex-col"}
+            headerClass={" flex gap-y-0 md:gap-y-1 lg:gap-y-2 flex-col"}
             titles={[
               {
                 title: "Powered By",
-                className: "blue-font",
+                className: "blue-font !mb-0 md:!mb-2",
                 stacktitle: false,
               },
               {
