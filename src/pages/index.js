@@ -25,7 +25,7 @@ export default function Home() {
       <Banner />
       <Cards />
       <LeftImageSection />
-      <ImageWithTitle />
+      {/* <ImageWithTitle /> */}
       <RightIMage />
       <ImageCarousal />
       <Footer />

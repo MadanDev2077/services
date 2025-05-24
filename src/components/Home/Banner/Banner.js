@@ -16,21 +16,22 @@ const Banner = () => {
             headerClass={
               " flex gap-y-0 md:gap-y-1 lg:gap-y-2 flex-col banner-title "
             }
+            headingLevel="h1"
             titles={[
               {
-                title: "The Modern Title And",
+                title: "Software Consulting and",
                 className:
                   "!mb-0 md:!mb-2 text-white section-title banner-title",
                 stacktitle: false,
               },
               {
-                title: " Closing Experience",
+                title: "Development ",
                 className: "text-[#d1fe67]",
                 stacktitle: true,
               },
             ]}
             desc={
-              "Combining World Class Technology With A Nationwide Team Of Experts For A Simple, Efficient, And Scalable Model."
+              "Our Software Consulting Services and Software Development can help you succeed in a constantly evolving market. We help you stay ahead of industry trends and achieve market dominance."
             }
             descClass={
               "w-full sm:w-[70%]  lg:w-[40%] inline-block !text-white !font-normal mt-2 sm:mt-3 md:mt-4 lg:mt-5"
@@ -38,13 +39,13 @@ const Banner = () => {
           />
         </div>
         <div className=" w-full sm:w-[400px] xl:w-[450px] pt-4 md:pt-6 lg:pt-2">
-          <SignupButton />
+          <SignupButton text={"Talk To Our Expert"} />
           <div className="flex items-center gap-x-2 pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8">
             <span className="bg-[#000] rounded-full p-1">
               <Check color="#bce858" size={12} strokeWidth="4px" />
             </span>
             <p className=" desc !text-[#d1fe67]">
-              Try It For Free 30 Minutes Consultation
+              Meet our experts with free 30 minutes cousultation
             </p>
           </div>
         </div>

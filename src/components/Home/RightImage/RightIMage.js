@@ -9,24 +9,24 @@ const RightIMage = () => {
   return (
     <section className=" container">
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-x-10">
-        <div className=" space-y-10 mr-0 md:mr-3 lg:mr-4 py-0 lg:py-10 xl:py-14">
+        <div className=" space-y-10 mr-0 md:mr-3 lg:mr-4 py-0 lg:py-2 xl:py-3">
           <TitleWithDesc
             ParentClass={"text-left"}
             headerClass={" flex gap-y-0 md:gap-y-1 lg:gap-y-2 flex-col"}
             titles={[
               {
-                title: "Powered By",
+                title: "We build solutions,",
                 className: "blue-font !mb-0 md:!mb-2",
                 stacktitle: false,
               },
               {
-                title: " Dedicated Expertise",
+                title: "Not just code",
                 className: "",
                 stacktitle: true,
               },
             ]}
             desc={
-              "Whether you're handling individual transactions or 1,000,simplicity is key. We've built a frictionless"
+              "FixyAds specialize in delivering top-notch full-stack software solutions designed to captivate your users and drive business growth. "
             }
             descClass={"w-full md:w-[60%] lg:w-[80%] xl:w-[70%] inline-block "}
           />
@@ -36,25 +36,49 @@ const RightIMage = () => {
                 <span className="bg-[#bce858] rounded-full p-1">
                   <Check color="#000" size={16} />
                 </span>
-                <p className=" desc !text-black">
-                  We partner with forward-thinking companies to scale
-                </p>
+                <p className=" desc !text-black">ERP Systems</p>
               </div>
               <div className=" flex gap-x-2 items-center">
                 <span className="bg-[#bce858] rounded-full p-1">
                   <Check color="#000" size={16} />
                 </span>
-                <p className=" desc !text-black">
-                  We partner with forward-thinking companies to scale
-                </p>
+                <p className=" desc !text-black">CRM Solutions </p>
               </div>
               <div className=" flex gap-x-2 items-center">
                 <span className="bg-[#bce858] rounded-full p-1">
                   <Check color="#000" size={16} />
                 </span>
-                <p className=" desc !text-black">
-                  We partner with forward-thinking companies to scale
-                </p>
+                <p className=" desc !text-black">Inventory Management</p>
+              </div>
+              <div className=" flex gap-x-2 items-center">
+                <span className="bg-[#bce858] rounded-full p-1">
+                  <Check color="#000" size={16} />
+                </span>
+                <p className=" desc !text-black">Enterprise Applications</p>
+              </div>
+              <div className=" flex gap-x-2 items-center">
+                <span className="bg-[#bce858] rounded-full p-1">
+                  <Check color="#000" size={16} />
+                </span>
+                <p className=" desc !text-black">Web Portals</p>
+              </div>
+              <div className=" flex gap-x-2 items-center">
+                <span className="bg-[#bce858] rounded-full p-1">
+                  <Check color="#000" size={16} />
+                </span>
+                <p className=" desc !text-black">Ecommerce Platforms</p>
+              </div>
+              <div className=" flex gap-x-2 items-center">
+                <span className="bg-[#bce858] rounded-full p-1">
+                  <Check color="#000" size={16} />
+                </span>
+                <p className=" desc !text-black">Elearning Software</p>
+              </div>
+              <div className=" flex gap-x-2 items-center">
+                <span className="bg-[#bce858] rounded-full p-1">
+                  <Check color="#000" size={16} />
+                </span>
+                <p className=" desc !text-black">Asset Management Software</p>
               </div>
             </div>
             <div className=" mt-5 md:mt-7 lg:mt-8 xl:mt-10">
