@@ -26,7 +26,6 @@ export default function Home() {
         titles={[{ title: "Software Development Company", className: "" }]}
         desc={
           <>
-            {" "}
             At FixyAds, we're a leading software development company
             specializing in enterprise solutions. We go beyond development,
             offering visionary software solutions tailored to your unique
