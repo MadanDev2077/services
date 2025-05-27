@@ -1,7 +1,7 @@
 import React from "react";
 import RoundedButton from "./RoundedButton";
 
-const SignupButton = ({ text }) => {
+const SignupButton = ({ text, button = false }) => {
   return (
     <div className=" border border-[#ffffff80] rounded-4xl px-2 relative py-4 md:py-5 bg-[#ffffff2b]">
       <input

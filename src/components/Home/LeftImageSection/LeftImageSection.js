@@ -7,7 +7,7 @@ import RoundedButton from "@/components/CommonLayouts/RoundedButton";
 const LeftImageSection = () => {
   return (
     <section className=" container space-y-6 md:space-y-8 lg:space-y-12 xl:space-y-16">
-      <TitleWithDesc
+      {/* <TitleWithDesc
         ParentClass={"text-center"}
         // title={"Built for scale & efficiency"}
         titles={[{ title: "Software Development Company", className: "" }]}
@@ -28,7 +28,7 @@ const LeftImageSection = () => {
           </>
         }
         descClass={"w-full md:w-[95%] lg:w-[80%] xl:w-[90%] inline-block"}
-      />
+      /> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2  gap-x-2 md:gap-x-4">
         <div className=" py-3 sm:py-5 md:py-10 space-y-3 md:space-y-5 lg:space-y-8 w-full lg:w-[80%] pl-0 lg:pl-16 xl:pl-20">

@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import React from "react";
 import CustomerReview from "./CustomerReview";
 import Header from "./Header";
+import RoundedButton from "@/components/CommonLayouts/RoundedButton";
 
 const Banner = () => {
   return (
@@ -39,7 +40,12 @@ const Banner = () => {
           />
         </div>
         <div className=" w-full sm:w-[400px] xl:w-[450px] pt-4 md:pt-6 lg:pt-2">
-          <SignupButton text={"Talk To Our Expert"} />
+          <RoundedButton
+            text={"Talk To Our Expert"}
+            classes={
+              "!bg-[#d1fe67] focus:!text-white !text-black hover:!text-white !px-7 font-semibold h-full button-hover-black flex items-center justicy-center"
+            }
+          />
           <div className="flex items-center gap-x-2 pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8">
             <span className="bg-[#000] rounded-full p-1">
               <Check color="#bce858" size={12} strokeWidth="4px" />
