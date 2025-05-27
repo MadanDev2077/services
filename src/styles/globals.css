@@ -89,6 +89,10 @@ body {
   .testi_parent {
   @apply w-auto;
 }
+.react-tel-input .form-control,
+.flag-dropdown {
+  border: 1px solid !important ;
+}
 
 .main_image {
   position: relative;

@@ -1,12 +1,15 @@
 import SignupButton from "@/components/CommonLayouts/SignupButton";
 import TitleWithDesc from "@/components/CommonLayouts/TitleWithDesc";
 import { Check } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import CustomerReview from "./CustomerReview";
 import Header from "./Header";
 import RoundedButton from "@/components/CommonLayouts/RoundedButton";
+import ConsultationModal from "@/components/CommonLayouts/ConsultationModal";
 
 const Banner = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="min-h-[70vh] md:min-h-[80vh] lg:min-h-[70vh] xl:min-h-screen bg-[#23969d] flex flex-col xl:block items-center md:items-start">
       <Header />
@@ -41,6 +44,7 @@ const Banner = () => {
         </div>
         <div className=" w-full sm:w-[400px] xl:w-[450px] pt-4 md:pt-6 lg:pt-2">
           <RoundedButton
+            onClick={() => setShowModal(true)}
             text={"Talk To Our Expert"}
             classes={
               "!bg-[#d1fe67] focus:!text-white !text-black hover:!text-white !px-7 font-semibold h-full button-hover-black flex items-center justicy-center"
@@ -59,6 +63,10 @@ const Banner = () => {
           <CustomerReview />
         </div>
       </div>
+      <ConsultationModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+      />
     </section>
   );
 };
