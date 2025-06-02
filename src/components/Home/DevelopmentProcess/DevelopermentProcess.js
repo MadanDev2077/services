@@ -68,7 +68,7 @@ const DevelopermentProcess = () => {
                   : "polygon(0 0, 100% 0, 100% 50%, calc(100% - 15px) 50%, 100% 50%, 100% 100%, 0 100%, 15px 50%)",
             }}
           >
-            <h3 className="text-base sm:text-lg md:text-xl mt-2 min-h-20">
+            <h3 className="text-base sm:text-lg md:text-xl mt-2 min-h-5 sm:min-h-10 md:min-h-20">
               {item.title}
             </h3>
             <p className=" desc !text-white ">{item.desc}</p>
