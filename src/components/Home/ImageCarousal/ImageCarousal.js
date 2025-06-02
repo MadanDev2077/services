@@ -13,19 +13,16 @@ const ImageCarousal = () => {
             headerClass={" flex  md:gap-y-2 flex-col"}
             titles={[
               {
-                title: "What They",
+                title: "Transforming Our IT Challenges into",
                 className: "blue-font !mb-0",
                 stacktitle: false,
               },
               {
-                title: " Saying About Us",
+                title: "Success Stories",
                 className: "",
                 stacktitle: true,
               },
             ]}
-            desc={
-              "Join with another customer and client satisfied with our service"
-            }
             descClass={"w-full md:w-[60%] lg:w-[40%] xl:w-[20%] inline-block "}
           />
         </div>

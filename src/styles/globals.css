@@ -26,9 +26,9 @@ body {
   }
 
   /* For Firefox. */
-  * {
+  /* * {
     scrollbar-width: none;
-  }
+  } */
   body {
     overflow-y: scroll;
     font-family: "Poppins";
@@ -36,9 +36,9 @@ body {
   }
 
   /* For WebKit (Chrome & Safari). */
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     display: none;
-  }
+  } */
 }
 .container {
   @apply px-2 sm:px-5 lg:px-9 xl:px-14 pb-3 sm:pb-6 md:pb-8 lg:pb-14 pt-12 sm:pt-16 lg:pt-24 xl:pt-28 m-auto max-w-[1600px];
@@ -72,6 +72,7 @@ body {
 }
 .swiper-slide.swiper-slide-active {
   scale: 1;
+  height: auto;
 }
 .swiper-slide.swiper-slide-active .card_img {
   @apply w-50 h-50;
@@ -87,11 +88,14 @@ body {
 .swiper.swiper-initialized.swiper-horizontal.mySwiper
   .swiper-slide
   .testi_parent {
-  @apply w-auto;
+  @apply w-auto h-full;
 }
 .react-tel-input .form-control,
 .flag-dropdown {
   border: 1px solid !important ;
+}
+.swiper-wrapper {
+  @apply items-stretch;
 }
 
 .main_image {
@@ -142,6 +146,7 @@ body {
 }
 .testimonial-slide {
   width: 80%; /* Control slide width */
+  height: auto !important;
 }
 
 .swiper-slide-active .testimonial-slide {

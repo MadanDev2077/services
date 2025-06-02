@@ -31,7 +31,7 @@ const LeftImageSection = () => {
       /> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2  gap-x-2 md:gap-x-4">
-        <div className=" py-3 sm:py-5 md:py-10 space-y-3 md:space-y-5 lg:space-y-8 w-full lg:w-[80%] pl-0 lg:pl-16 xl:pl-20">
+        <div className=" py-3 sm:py-5 md:py-10 space-y-3 md:space-y-5 lg:space-y-8 w-full lg:w-[80%] pl-0 lg:pl-16 xl:pl-20 order-2 lg:order-1">
           <div className="flex gap-x-1 md:gap-x-3 xl:gap-x-4 items-baseline  border-b-gray-200 border-b-2 pb-10">
             <div className="h-[20px]">
               <Backpack color="#99dadf" />
@@ -98,7 +98,7 @@ const LeftImageSection = () => {
             </div>
           </div>
         </div>
-        <div class="main_image pt-[50%] ">
+        <div class="main_image pt-[50%] order-1">
           <div
             className="bg_full rounded-2xl"
             style={{ backgroundImage: `url(${officeImg.src})` }}

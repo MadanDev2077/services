@@ -7,44 +7,36 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "Gary Beasley1",
-    role: "CEO & Co-Founder Roofstock",
-    message:
-      "As the leading experts in single-family rentals, Roofstock has combined some of the smartest people in the business with robust data science.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzPBeoS9wBWs5EoT59r4xNpfTStpvt9A4DUd25KOcwDpW4DeVr",
-    companyLogo:
-      "https://png.pngtree.com/png-vector/20190304/ourmid/pngtree-growth-business-company-logo-png-image_728232.jpg",
+    title: "Scoping",
+    desc: "We gather complete requirements, define an accurate scope, and prevent scope creep while safeguarding critical deliverables.",
   },
   {
-    name: "Jane Doe2",
-    role: "CTO @ Fintech Co",
-    message:
-      "Data-driven transformation that speaks for itself. We scaled effortlessly.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzPBeoS9wBWs5EoT59r4xNpfTStpvt9A4DUd25KOcwDpW4DeVr",
-    companyLogo:
-      "https://png.pngtree.com/png-vector/20190304/ourmid/pngtree-growth-business-company-logo-png-image_728232.jpg",
+    title: "Resource Planning",
+    desc: "Our approach creates the right-sized team with the best-fit experts for each role, tailored to a fully outsourced cooperation model.",
   },
   {
-    name: "Jane Doe3",
-    role: "CTO @ Fintech Co",
-    message:
-      "Data-driven transformation that speaks for itself. We scaled effortlessly.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzPBeoS9wBWs5EoT59r4xNpfTStpvt9A4DUd25KOcwDpW4DeVr",
-    companyLogo:
-      "https://png.pngtree.com/png-vector/20190304/ourmid/pngtree-growth-business-company-logo-png-image_728232.jpg",
+    title: "Cost Estimation",
+    desc: "With precise cost estimation principles, we optimize budgets and provide clear examples of calculations to help you plan confidently.",
   },
   {
-    name: "Jane Doe3",
-    role: "CTO @ Fintech Co",
-    message:
-      "Data-driven transformation that speaks for itself. We scaled effortlessly.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzPBeoS9wBWs5EoT59r4xNpfTStpvt9A4DUd25KOcwDpW4DeVr",
-    companyLogo:
-      "https://png.pngtree.com/png-vector/20190304/ourmid/pngtree-growth-business-company-logo-png-image_728232.jpg",
+    title: "Risk Management",
+    desc: "By identifying potential risks early, we address challenges at every stage of the Software Development Life Cycle (SDLC).",
+  },
+  {
+    title: "Management Request",
+    desc: "Our structured process evaluates and implements feasible change requests, adapting without compromising project goals.",
+  },
+  {
+    title: "Success Measurement",
+    desc: "We use clear KPIs to measure cooperation health and assess joint success to align with your objectives.",
+  },
+  {
+    title: "Project Reporting",
+    desc: "Reports cover all stages of development, offering transparency and actionable insights.",
+  },
+  {
+    title: "Collaboration",
+    desc: "Communication is our priority. We use the best tools and practices to promote productive teamwork and smooth client interaction.",
   },
 ];
 
@@ -61,9 +53,10 @@ export default function Testimonials() {
         className="mySwiper !pb-10 sm:!pb-14 md:!pb-16 lg:!pb-18 xl:!pb-20"
         breakpoints={{
           0: { slidesPerView: 1 },
-          900: { slidesPerView: 2 },
-          1280: { slidesPerView: 3 },
-          1300: { slidesPerView: 3 },
+          400: { slidesPerView: 2 },
+          900: { slidesPerView: 4 },
+          1280: { slidesPerView: 6 },
+          1300: { slidesPerView: 7 },
         }}
       >
         {/* <Swiper
@@ -77,29 +70,15 @@ export default function Testimonials() {
         }}
       ></Swiper> */}
         {testimonials.map((t, index) => (
-          <SwiperSlide key={index} className="testimonial-slide">
-            <div className="testi_parent transition-transform duration-300 ease-in-out bg-white rounded-3xl shadow-lg p-6 flex flex-col md:flex-row gap-6 items-center w-[85vw] max-w-[800px] mx-auto sm:w-[600px] md:w-[450px] lg:w-[500px] xl:w-[500px]">
-              <div>
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-50 h-50 rounded-xl object-cover card_img"
-                />
-              </div>
-              <div className=" space-y-2 flex h-[200px] flex-col flex-1">
+          <SwiperSlide key={index} className="testimonial-slide select-none">
+            <div className="testi_parent transition-transform duration-300 ease-in-out bg-white rounded-3xl shadow-lg p-6 flex flex-col md:flex-row gap-6 items-center w-[85vw] max-w-[800px] mx-auto sm:w-[400px] md:w-[250px] lg:w-[300px]">
+              <div className=" space-y-2 flex min-h-[90px] flex-col flex-1">
                 <div className="space-y-2 flex-1">
                   <div className=" flex gap-x-2 items-center">
-                    <img
-                      src={t.companyLogo}
-                      alt="Company Logo"
-                      className="h-6"
-                    />
-                    <h3 className=" font-semibold ">rootstock</h3>
+                    <h3 className=" font-semibold ">{t.title}</h3>
                   </div>
-                  <p className="desc mb-4">{t.message}</p>
+                  <p className="desc mb-4">{t.desc}</p>
                 </div>
-                <h4 className="font-semibold text-gray-900">{t.name}</h4>
-                <p className=" desc">{t.role}</p>
               </div>
             </div>
           </SwiperSlide>

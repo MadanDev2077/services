@@ -9,7 +9,13 @@ const RightIMage = () => {
   return (
     <section className=" container">
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-x-10">
-        <div className=" space-y-10 mr-0 md:mr-3 lg:mr-4 py-0 lg:py-2 xl:py-3">
+        <div class="main_image pt-[50%]">
+          <div
+            class="bg_full"
+            style={{ backgroundImage: `url(${officeImg.src})` }}
+          ></div>
+        </div>
+        <div className="py-3 sm:py-5 md:py-10 space-y-3 md:space-y-5 lg:space-y-8 w-full lg:w-[80%] pl-0 lg:pl-16 xl:pl-20">
           <TitleWithDesc
             ParentClass={"text-left"}
             headerClass={" flex gap-y-0 md:gap-y-1 lg:gap-y-2 flex-col"}
@@ -85,12 +91,6 @@ const RightIMage = () => {
               <RoundedButton text={"Learn More"} classes={"!px-20"} />
             </div>
           </div>
-        </div>
-        <div class="main_image pt-[50%]">
-          <div
-            class="bg_full"
-            style={{ backgroundImage: `url(${officeImg.src})` }}
-          ></div>
         </div>
       </div>
     </section>

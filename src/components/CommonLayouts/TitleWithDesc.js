@@ -24,11 +24,13 @@ const TitleWithDesc = ({
           </span>
         ))}
       </HeadingTag>
-      <description
-        className={`${descClass} desc w-full !md:w-[80%] !lg:w-[60%] !xl:w-[40%]`}
-      >
-        {desc}
-      </description>
+      {desc && (
+        <description
+          className={`${descClass} desc w-full !md:w-[80%] !lg:w-[60%] !xl:w-[40%]`}
+        >
+          {desc}
+        </description>
+      )}
     </div>
   );
 };
