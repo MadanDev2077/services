@@ -20,7 +20,7 @@ const DevelopermentProcess = () => {
       />
 
       {/* Stepper Arrows */}
-      <div className="flex flex-col md:flex-row  flex-wrap gap-x-4 gap-y-3 justify-center">
+      <div className="flex flex-col md:flex-row  flex-wrap gap-x-1 gap-y-3 sm:gap-y-6 md:gap-y-8 lg:gap-y-10 justify-around">
         {[
           {
             title: "Requirement Analysis",
@@ -60,7 +60,7 @@ const DevelopermentProcess = () => {
         ].map((item, idx, arr) => (
           <div
             key={idx}
-            className={`relative text-white space-y-2 md:space-y-3 ${item.color} px-6 py-6 rounded-md text-center w-full md:w-[40%] lg:w-[30%] xl:w-[20%] flex flex-col`}
+            className={`relative text-white space-y-2 md:space-y-3 ${item.color} px-6 py-6 rounded-md text-center w-full md:w-[40%] lg:w-[30%] xl:w-[18%] flex flex-col`}
             style={{
               clipPath:
                 idx === arr.length - 1

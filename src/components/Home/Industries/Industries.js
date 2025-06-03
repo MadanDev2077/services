@@ -93,7 +93,7 @@ const Industries = () => {
 
   return (
     <section className="container">
-      <div className="max-w-7xl mx-auto">
+      <div className="">
         {/* Header */}
         <div className="flex justify-between items-center mb-12">
           <h2 className="section-title">Transforming businesses</h2>
