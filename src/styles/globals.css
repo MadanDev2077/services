@@ -169,3 +169,13 @@ body {
   transform: scale(1.05);
   z-index: 10;
 }
+.swiper-slide-shadow-left.swiper-slide-shadow-coverflow {
+  background-image: none;
+}
+.mydev .swiper-3d .swiper-slide-shadow-left,
+.mydev .swiper-3d .swiper-slide-shadow-right {
+  background-image: none !important;
+}
+.mydev .swiper-3d {
+  padding: 15px 0px;
+}

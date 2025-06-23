@@ -30,15 +30,14 @@ import { StackedCards } from "@/components/StackedCards";
 export default function Home() {
   return (
     <main>
-      {/* <Test /> */}
-      {/* <ProcessFlowSwiper /> */}
-      {/* <EngagementModel /> */}
       {/* <StackedCards /> */}
-      {/* <CryptoHero /> */}
+
       <Banner />
       <Cards />
       <ServiceSection />
-      <TitleWithImage
+      <CryptoHero />
+      <EngagementModel />
+      {/* <TitleWithImage
         titles={[{ title: "Software Development Company", className: "" }]}
         desc={
           <>
@@ -57,14 +56,15 @@ export default function Home() {
             your vision to reality
           </>
         }
-      />
-      <LeftImageSection />
+      /> */}
+      {/* <LeftImageSection /> */}
       {/* <ImageWithTitle /> */}
       <RightIMage />
       <Industries />
       <ImageCarousal />
       <TechStack />
       <DevelopermentProcess />
+      {/* <ProcessFlowSwiper /> */}
       <Footer />
     </main>
   );

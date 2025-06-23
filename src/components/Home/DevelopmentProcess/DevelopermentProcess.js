@@ -1,9 +1,40 @@
 import TitleWithDesc from "@/components/CommonLayouts/TitleWithDesc";
+import ProcessFlowSwiper from "@/components/ProcessFlowSwiper";
 import React from "react";
 
 const DevelopermentProcess = () => {
+  const Data = [
+    {
+      title: "Requirement Analysis",
+      desc: "We begin by fully understanding your business needs and objectives. Through in-depth discussions and assessments, we gather all the essential requirements to align with your vision.",
+    },
+    {
+      title: "Planning and Strategy",
+      desc: "Based on the analysis, we develop a detailed plan and strategy, defining project scope, timelines, and resource allocation to facilitate a streamlined development process.",
+    },
+    {
+      title: "Design and Prototyping",
+      desc: "Our design team creates user-centered designs and prototypes that help visualize the final product. This stage focuses on user experience and interface design, making the product intuitive and visually appealing.",
+    },
+    {
+      title: "Development",
+      desc: "Our developers use the latest technologies and industry best practices to create robust and scalable solutions. We follow agile methodologies, allowing flexibility and progress throughout the development lifecycle.",
+    },
+    {
+      title: "Testing and Quality Assurance",
+      desc: "Thorough testing is conducted to identify and resolve any issues. Our QA team verifies the product meets high-quality standards and performs optimally across various conditions.",
+    },
+    {
+      title: "Deployment",
+      desc: "Once the solution is tested and approved, we deploy it into your environment. The deployment process is handled with care to minimize disruptions to your operations.",
+    },
+    {
+      title: "Maintenance and Support",
+      desc: "After deployment, we provide continuous maintenance and support, keeping the solution up-to-date and running efficiently. We address any issues promptly and implement necessary updates as your needs evolve.",
+    },
+  ];
   return (
-    <section className="container">
+    <section className="container bg-[#f7f7f9] ">
       {/* Title and Description */}
       <TitleWithDesc
         ParentClass={
@@ -18,9 +49,9 @@ const DevelopermentProcess = () => {
           },
         ]}
       />
-
+      <ProcessFlowSwiper portfolioItems={Data} />
       {/* Stepper Arrows */}
-      <div className="flex flex-col md:flex-row  flex-wrap gap-x-1 gap-y-3 sm:gap-y-6 md:gap-y-8 lg:gap-y-10 justify-around">
+      {/* <div className="flex flex-col md:flex-row  flex-wrap gap-x-1 gap-y-3 sm:gap-y-6 md:gap-y-8 lg:gap-y-10 justify-around">
         {[
           {
             title: "Requirement Analysis",
@@ -74,7 +105,7 @@ const DevelopermentProcess = () => {
             <p className=" desc !text-white ">{item.desc}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
