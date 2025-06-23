@@ -1,4 +1,6 @@
 import TitleWithImage from "@/components/CommonLayouts/TitleWithImage";
+import CryptoHero from "@/components/CryptoHero";
+import EngagementModel from "@/components/EngagementModel/EngagementModel";
 import Banner from "@/components/Home/Banner/Banner";
 import Cards from "@/components/Home/CardsWithTitle/Cards";
 import DevelopermentProcess from "@/components/Home/DevelopmentProcess/DevelopermentProcess";
@@ -9,6 +11,10 @@ import LeftImageSection from "@/components/Home/LeftImageSection/LeftImageSectio
 import RightIMage from "@/components/Home/RightImage/RightIMage";
 import ServiceSection from "@/components/Home/Services/Services";
 import TechStack from "@/components/Home/TechStack/TechStack";
+import ProcessFlowSwiper from "@/components/ProcessFlowSwiper";
+import { StackedCards } from "@/components/StackedCards";
+
+// import Test from "@/components/Test";
 // import { Geist, Geist_Mono } from "next/font/google";
 
 // const geistSans = Geist({
@@ -24,6 +30,11 @@ import TechStack from "@/components/Home/TechStack/TechStack";
 export default function Home() {
   return (
     <main>
+      {/* <Test /> */}
+      {/* <ProcessFlowSwiper /> */}
+      {/* <EngagementModel /> */}
+      {/* <StackedCards /> */}
+      {/* <CryptoHero /> */}
       <Banner />
       <Cards />
       <ServiceSection />

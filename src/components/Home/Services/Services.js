@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { StackedCards } from "@/components/StackedCards";
 
 // Data abstraction: cleaner, scalable structure
 const serviceData = {
@@ -236,9 +237,9 @@ const ServiceSection = () => {
   const [selected, setSelected] = useState("Software Development");
 
   return (
-    <div className="flex flex-col md:flex-row  md:h-screen">
+    <div className="flex flex-col lg:flex-row  lg:h-screen">
       {/* Left Menu */}
-      <div className="w-full md:w-[500px] xl:w-[600px] bg-[#23969d] p-10">
+      <div className="w-full lg:w-[500px] xl:w-[600px] bg-[#23969d] p-10">
         <h2 className="section-title font-bold mb-6">
           Discover Our FixyAds Services – We Build Anything You Imagine.
         </h2>
@@ -258,7 +259,7 @@ const ServiceSection = () => {
       </div>
 
       {/* Right Content */}
-      <div className="w-full md:w-[60%] p-10 overflow-auto scroll-">
+      <div className="w-full lg:w-[60%] p-10 overflow-auto flex flex-col">
         <AnimatePresence mode="wait">
           <motion.div
             key={selected}
@@ -266,13 +267,15 @@ const ServiceSection = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -30 }}
             transition={{ duration: 0.4 }}
+            className="flex-1 flex flex-col"
           >
             <h2 className="text-xl xl:text-2xl font-bold mb-4">
               {serviceData[selected].title}
             </h2>
             <p className="mb-6 desc">{serviceData[selected].description}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {serviceData[selected].points.map((point, index) => (
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+            <StackedCards servicess={serviceData[selected]} />
+            {/* {serviceData[selected].points.map((point, index) => (
                 <div
                   key={index}
                   className={`border p-4 rounded shadow-sm ${
@@ -284,8 +287,8 @@ const ServiceSection = () => {
                   </h3>
                   <p className="desc">{point.text}</p>
                 </div>
-              ))}
-            </div>
+              ))} */}
+            {/* </div> */}
           </motion.div>
         </AnimatePresence>
       </div>
