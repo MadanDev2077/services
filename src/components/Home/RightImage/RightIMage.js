@@ -53,7 +53,7 @@ const RightIMage = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section ref={containerRef} className=" container">
+    <section ref={containerRef} className=" container overflow-x-hidden">
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-x-10">
         <div class="main_image pt-[50%]" ref={rightImageRef}>
           <div
