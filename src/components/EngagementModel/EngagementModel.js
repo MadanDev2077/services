@@ -1,7 +1,55 @@
+import { useEffect, useRef } from "react";
 import img1 from "../../assets/Images/section/Frame-28.svg";
 import img2 from "../../assets/Images/section/Frame-29.svg";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger"; //
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function EngagementModels() {
+  const leftContentRef = useRef(null);
+  const rightImageRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Left Content: parallax from top
+      gsap.fromTo(
+        leftContentRef.current,
+        { y: -150, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 60%",
+            end: "top 40%",
+            scrub: 1.2, // Tied to scroll for parallax effect
+          },
+        }
+      );
+
+      // Right Image: parallax from bottom
+      gsap.fromTo(
+        rightImageRef.current,
+        { y: 150, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 60%",
+            end: "top 20%",
+            scrub: 1.5, // Slightly delayed for natural visual flow
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
   const cards = [
     {
       icon: img1,
@@ -30,15 +78,18 @@ export default function EngagementModels() {
   ];
 
   return (
-    <section className="bg-[#f7f7f9]  container">
-      <div className="max-w-6xl mx-auto ">
+    <section ref={containerRef} className="bg-[#f7f7f9]  container">
+      <div ref={leftContentRef} className="max-w-6xl mx-auto ">
         <h2 className="text-4xl md:text-6xl font-light text-[#1d1d1f] leading-tight">
           ENGAGEMENT
           <br /> MODELS
         </h2>
       </div>
 
-      <div className="mt-5 sm:mt-8 md:mt-12 lg:mt-14 xl:mt-16 space-y-3 md:space-y-6 lg:space-y-8 xl:space-y-10 max-w-4xl mx-auto ">
+      <div
+        ref={rightImageRef}
+        className="mt-5 sm:mt-8 md:mt-12 lg:mt-14 xl:mt-16 space-y-3 md:space-y-6 lg:space-y-8 xl:space-y-10 max-w-4xl mx-auto "
+      >
         {cards.map((card, index) => (
           <div
             key={index}

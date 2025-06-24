@@ -1,12 +1,42 @@
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SignUpCard from "@/components/CommonLayouts/SignUpCard";
 import { Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        containerRef.current,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 2.5, // Slow and smooth scroll-tied effect
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
   return (
     <footer className="bg-[#181818] ">
-      <div className="container !mt-30 sm:!mt-40  md:!mt-[120px] lg:!mt-[160px] xl:!mt-[170px] ">
+      <div
+        ref={containerRef}
+        className="container !mt-30 sm:!mt-40  md:!mt-[120px] lg:!mt-[160px] xl:!mt-[170px] "
+      >
         <SignUpCard />
         <div className="flex flex-col md:flex-row gap-y-5 sm:gap-y-10 gap-x-2 items-baseline py-10 md:py-14 lg:py-16 xl:py-20">
           <div className="space-y-2 md:space-y-3 xl:space-y-4 md:w-[30%]">

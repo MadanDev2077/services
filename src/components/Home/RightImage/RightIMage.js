@@ -1,21 +1,70 @@
 import TitleWithDesc from "@/components/CommonLayouts/TitleWithDesc";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import LeftSection from "./LeftSection";
 import RoundedButton from "@/components/CommonLayouts/RoundedButton";
 import officeImg from "../../../assets/Images/section/office.jpg";
 import { Check } from "lucide-react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger"; // ✅ CORRECT for Vite, CRA, and Next.js
 
+gsap.registerPlugin(ScrollTrigger); // ✅ Register the plugin
 const RightIMage = () => {
+  const leftContentRef = useRef(null);
+  const rightImageRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Left Content: parallax from far left
+      gsap.fromTo(
+        leftContentRef.current,
+        { x: -150, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 1.2, // 💡 gives a parallax "scroll tied" feel
+          },
+        }
+      );
+
+      // Right Image: parallax from far right
+      gsap.fromTo(
+        rightImageRef.current,
+        { x: 150, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 1.5, // 💡 slightly different rate for layered depth
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
   return (
-    <section className=" container">
+    <section ref={containerRef} className=" container">
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-x-10">
-        <div class="main_image pt-[50%]">
+        <div class="main_image pt-[50%]" ref={rightImageRef}>
           <div
             class="bg_full"
             style={{ backgroundImage: `url(${officeImg.src})` }}
           ></div>
         </div>
-        <div className="py-3 sm:py-5 md:py-10 space-y-3 md:space-y-5 lg:space-y-8 w-full lg:w-[80%] pl-0 lg:pl-16 xl:pl-20">
+        <div
+          ref={leftContentRef}
+          className="py-3 sm:py-5 md:py-10 space-y-3 md:space-y-5 lg:space-y-8 w-full lg:w-[80%] pl-0 lg:pl-16 xl:pl-20"
+        >
           <TitleWithDesc
             ParentClass={"text-left"}
             headerClass={" flex gap-y-0 md:gap-y-1 lg:gap-y-2 flex-col"}
