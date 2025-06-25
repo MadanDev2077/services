@@ -1,6 +1,7 @@
 import TitleWithImage from "@/components/CommonLayouts/TitleWithImage";
 import CryptoHero from "@/components/CryptoHero";
 import EngagementModel from "@/components/EngagementModel/EngagementModel";
+import Hero from "@/components/Hero";
 import Banner from "@/components/Home/Banner/Banner";
 import Cards from "@/components/Home/CardsWithTitle/Cards";
 import DevelopermentProcess from "@/components/Home/DevelopmentProcess/DevelopermentProcess";
@@ -31,8 +32,8 @@ export default function Home() {
   return (
     <main>
       {/* <StackedCards /> */}
-
-      <Banner />
+      <Hero />
+      {/* <Banner /> */}
       <Cards />
       <ServiceSection />
       <CryptoHero />

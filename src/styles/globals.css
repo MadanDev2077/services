@@ -179,3 +179,14 @@ body {
 .mydev .swiper-3d {
   padding: 15px 0px;
 }
+.swiper-pagination-custom .swiper-pagination-bullet {
+  background-color: #23969d9c;
+  transition: 0.3s ease all;
+}
+.swiper-pagination-custom
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #23969d;
+  width: 6px;
+  height: 44px;
+  border-radius: 12px;
+}
