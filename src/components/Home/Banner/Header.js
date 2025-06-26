@@ -15,6 +15,15 @@ export default function HeaderNav() {
     );
   }, []);
 
+  useEffect(() => {
+    alert("test");
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
   return (
     <header
       ref={headerRef}
