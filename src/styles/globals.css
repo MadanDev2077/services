@@ -59,6 +59,15 @@ body {
 .container {
   @apply px-2 sm:px-5 lg:px-9 xl:px-14 pb-3 sm:pb-6 md:pb-8 lg:pb-14 pt-12 sm:pt-16 lg:pt-24 xl:pt-28 m-auto max-w-[1600px];
 }
+.bg-gray {
+  @apply bg-[#f3f2ea];
+}
+.bg-orange {
+  @apply bg-[#ffe2b2];
+}
+.bg-pink {
+  @apply bg-gradient-to-br from-pink-100 via-purple-50 to-pink-200;
+}
 .blue-font {
   @apply bg-gradient-to-b from-[#2daeb7] to-[#2aa9ad] bg-clip-text text-transparent;
 }
@@ -186,7 +195,7 @@ body {
 .swiper-pagination-custom
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #23969d;
-  width: 6px;
-  height: 44px;
+  height: 6px;
+  width: 44px;
   border-radius: 12px;
 }

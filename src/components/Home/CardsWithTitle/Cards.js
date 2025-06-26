@@ -53,7 +53,7 @@ const Cards = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="container">
+    <section ref={containerRef} className="container bg-pink">
       {/* Title Animation Block */}
       <div className="cards-title">
         <TitlewithButton

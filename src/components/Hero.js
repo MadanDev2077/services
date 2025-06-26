@@ -2,14 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Mousewheel, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import "swiper/css/mousewheel";
 
 import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger"; // ✅ CORRECT for Vite, CRA, and Next.js
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import game from "../assets/Images/section/game.webp";
 import web3 from "../assets/Images/section/webe.webp";
@@ -66,26 +65,38 @@ export default function CryptoBanner() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: bannerRef.current,
-          start: "top 80%",
-          end: "bottom 20%", // Ensures full section is scrolled through
-          toggleActions: "play reverse play reverse", // 👈 auto-reverse
-          // markers: true, // ✅ uncomment for debugging scroll positions
-        },
-      });
+      const resetToInitial = () => {
+        gsap.set(".crypto-left", { x: -100, opacity: 0 });
+        gsap.set(".crypto-right", { x: 100, opacity: 0 });
+      };
 
-      tl.fromTo(
-        ".crypto-left",
-        { x: -100, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1.2, ease: "power3.out" }
-      ).fromTo(
-        ".crypto-right",
-        { x: 100, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1.2, ease: "power3.out" },
-        "-=0.6"
-      );
+      const animateIn = () => {
+        gsap.to(".crypto-left", {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+        });
+        gsap.to(".crypto-right", {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          delay: 0.2,
+        });
+      };
+
+      resetToInitial();
+
+      ScrollTrigger.create({
+        trigger: bannerRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: animateIn,
+        onEnterBack: animateIn,
+        onLeave: resetToInitial,
+        onLeaveBack: resetToInitial,
+      });
     }, bannerRef);
 
     return () => ctx.revert();
@@ -94,7 +105,7 @@ export default function CryptoBanner() {
   return (
     <section
       ref={bannerRef}
-      className="min-h-screen container justify-center overflow-x-hidden flex flex-col gap-x-10 md:flex-row items-center justify-between px-6 md:px-16 py-12 bg-[#f3f2ea]"
+      className="min-h-screen container justify-center md:justify-between overflow-x-hidden flex flex-col gap-x-10 md:flex-row items-center  px-6 md:px-16 py-12 bg-gray"
     >
       {/* LEFT */}
       <div className="crypto-left md:w-[40%] w-full text-center md:text-left space-y-6">
@@ -109,9 +120,9 @@ export default function CryptoBanner() {
       </div>
 
       {/* RIGHT */}
-      <div className="crypto-right hidden md:inline-block md:w-[60%] w-full mt-10 md:mt-0 relative">
+      <div className="crypto-right hidden md:flex md:flex-col md:w-[60%] w-full mt-10 md:mt-0 relative">
         <Swiper
-          direction="vertical"
+          direction="horizontal"
           slidesPerView={1}
           spaceBetween={30}
           loop={true}
@@ -120,15 +131,10 @@ export default function CryptoBanner() {
             clickable: true,
             el: ".swiper-pagination-custom",
           }}
-          mousewheel={{
-            forceToAxis: true,
-            thresholdDelta: 50,
-            releaseOnEdges: true,
-          }}
           onSlideChange={(swiper) => {
             setActiveIndex(swiper.realIndex);
           }}
-          modules={[Autoplay, Pagination, Mousewheel]}
+          modules={[Autoplay, Pagination]}
           grabCursor={true}
           className="w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden z-10"
         >
@@ -137,14 +143,14 @@ export default function CryptoBanner() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-contain rounded-lg shadow"
+                className="w-full h-full object-contain rounded-lg"
               />
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Pagination Dots */}
-        <div className="swiper-pagination-custom absolute !w-auto !left-full transform flex flex-col gap-3 z-0 justify-center" />
+        {/* Pagination Dots Below Swiper */}
+        <div className="swiper-pagination-custom mt-4 self-center !w-auto flex gap-2 z-0 justify-center" />
       </div>
     </section>
   );

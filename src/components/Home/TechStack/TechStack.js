@@ -54,7 +54,7 @@ const TechStack = () => {
   return (
     <section
       ref={containerRef}
-      className="relative bg-white py-24 overflow-hidden container"
+      className="relative bg-orange py-24 overflow-hidden container"
     >
       <div ref={rightImageRef} className="z-20 relative">
         {/* Title Section */}
@@ -75,7 +75,7 @@ const TechStack = () => {
 
       <div
         ref={leftContentRef}
-        className="absolute inset-0 bg-white p-2 flex items-center justify-center"
+        className="absolute inset-0 bg-orange  p-2 flex items-center justify-center"
       >
         <img
           src={languageImage.src}

@@ -237,9 +237,9 @@ const ServiceSection = () => {
   const [selected, setSelected] = useState("Software Development");
 
   return (
-    <div className="flex flex-col lg:flex-row  lg:h-screen">
+    <div className="flex flex-col lg:flex-row  lg:h-screen bg-orange">
       {/* Left Menu */}
-      <div className="w-full lg:w-[500px] xl:w-[600px] bg-[#23969d] p-10">
+      <div className="w-full lg:w-[500px] xl:w-[600px] bg-[#f95700] p-10">
         <h2 className="section-title font-bold mb-6">
           Discover Our FixyAds Services – We Build Anything You Imagine.
         </h2>
@@ -249,7 +249,7 @@ const ServiceSection = () => {
               key={service}
               onClick={() => setSelected(service)}
               className={`cursor-pointer py-2 px-3 font-medium rounded ${
-                selected === service ? "bg-[#d1fe67]" : ""
+                selected === service ? " bg-orange" : ""
               }`}
             >
               {service}

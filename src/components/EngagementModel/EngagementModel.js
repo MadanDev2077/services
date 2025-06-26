@@ -78,7 +78,7 @@ export default function EngagementModels() {
   ];
 
   return (
-    <section ref={containerRef} className="bg-[#f7f7f9]  container">
+    <section ref={containerRef} className="bg-gray  container">
       <div ref={leftContentRef} className="max-w-6xl mx-auto ">
         <h2 className="text-4xl md:text-6xl font-light text-[#1d1d1f] leading-tight">
           ENGAGEMENT

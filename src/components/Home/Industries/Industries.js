@@ -170,7 +170,7 @@ const Industries = () => {
   }, [swiperReady]);
 
   return (
-    <section ref={containerRef} className="container">
+    <section ref={containerRef} className="container bg-orange">
       {/* Header */}
       <div className="flex justify-between items-center mb-12">
         <h2 ref={titleRef} className="section-title">

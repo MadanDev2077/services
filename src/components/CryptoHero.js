@@ -54,7 +54,7 @@ const CryptoHero = () => {
   return (
     <section
       ref={containerRef}
-      className="container bg-gradient-to-br from-pink-100 via-purple-50 to-pink-200 relative overflow-hidden"
+      className="container bg-pink relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">

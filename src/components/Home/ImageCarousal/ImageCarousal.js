@@ -5,7 +5,7 @@ import Testimonials from "../Testimonials/Testimonials";
 
 const ImageCarousal = () => {
   return (
-    <section className=" ">
+    <section className=" bg-pink">
       <div className="container">
         <div className=" space-y-10">
           <TitleWithDesc
