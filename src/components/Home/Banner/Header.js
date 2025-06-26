@@ -16,7 +16,6 @@ export default function HeaderNav() {
   }, []);
 
   useEffect(() => {
-    alert("test");
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
     } else {
@@ -90,7 +89,7 @@ export default function HeaderNav() {
 
       <nav
         ref={menuRef}
-        className={`fixed -top-5 right-0 h-screen w-screen bg-black bg-opacity-95 z-[100] p-6 flex flex-col gap-6 text-sm font-medium md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed -top-5 right-0 h-screen w-screen bg-black bg-opacity-95 z-[100] p-6 flex flex-col gap-6 text-sm font-medium  transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
