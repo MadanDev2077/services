@@ -1,97 +1,138 @@
-"use client";
-
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
 
-const navLinks = ["About Us", "Product", "Services", "Resources"];
-
-export default function Header() {
+export default function HeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const headerRef = useRef(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    const updateBodyOverflow = () => {
-      document.body.style.overflowY = isOpen ? "hidden" : "auto";
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    updateBodyOverflow();
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.body.style.overflowY = "auto";
-    };
-  }, [isOpen]);
+    gsap.fromTo(
+      headerRef.current,
+      { y: "-100%" },
+      { y: "0%", duration: 0.5, ease: "power2.out" }
+    );
+  }, []);
 
   return (
-    <header className="w-full  py-4 sm:py-5 md:py-6 lg:py-8 xl:py-12 relative z-50 px-2  sm:px-5 lg:px-9 xl:px-14">
-      <div className="mx-auto flex items-center justify-between">
-        {/* Brand (can be replaced or removed) */}
-        <div className="text-white font-bold text-xl flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
-            <span className="text-lime-400 text-2xl font-extrabold">⚡</span>
-          </div>
-          Urit
-        </div>
+    <header
+      ref={headerRef}
+      className="w-full px-4 py-3 bg-transparent fixed top-5 z-[100] left-0"
+    >
+      <div
+        className={`flex justify-between items-center max-w-7xl mx-auto nav`}
+      >
+        <a href="https://www.gamesd.app" className="flex items-center gap-2">
+          <span className="text-white text-base md:text-[18px] lg:text-[19px] font-semibold">
+            TechnoSpots
+          </span>
+        </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 md:gap-x-10 lg:gap-x-12 xl:gap-x-16">
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase().replace(/\s+/g, "")}`}
-              className=" text-sm font-medium text-[#ffffffb4] transition-all duration-200  hover:text-white hover:font-medium"
-            >
-              {link}
-            </a>
-          ))}
+        <nav className="hidden md:flex gap-6 text-sm font-medium items-center">
+          <a
+            href="https://www.gamesd.app"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-home"></i>{" "}
+            <span className="text-white">Home</span>
+          </a>
+          <a
+            href="https://www.gamesd.app/blog/category/metaverse-games-clone"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-book"></i>{" "}
+            <span className="text-white">Blog</span>
+          </a>
+          <a
+            href="https://www.gamesd.app/news"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-newspaper"></i>{" "}
+            <span className="text-white">News</span>
+          </a>
+          <a
+            href="https://www.gamesd.app/announcement"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-bullhorn"></i>{" "}
+            <span className="text-white">Announcement</span>
+          </a>
         </nav>
 
-        {/* Login Button */}
-        <div className="hidden md:flex items-center"></div>
-
-        {/* Burger Menu */}
-        <div className="md:hidden flex items-center ">
+        <div className="hidden md:block">
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={` cursor-pointer text-white relative z-50`}
+            onClick={() => alert("Open contact form")}
+            className="bg-lime-400 text-black font-semibold px-4 py-2 rounded-md hover:bg-lime-500"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            Contact Us
+          </button>
+        </div>
+
+        <div className="md:hidden flex justify-center">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="text-lime-400 focus:outline-none cursor-pointer"
+          >
+            <Menu size={24} />
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            ref={menuRef}
-            initial={{ clipPath: "inset(0 0 0 100%)", opacity: 0 }}
-            animate={{ clipPath: "inset(0 0 0 0%)", opacity: 1 }}
-            exit={{ clipPath: "inset(0 0 0 100%)", opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="absolute top-0 right-0 w-3/4 h-screen bg-[#252529] shadow-lg flex flex-col items-start gap-6 px-6 pt-20 z-40"
+      <nav
+        ref={menuRef}
+        className={`fixed -top-5 right-0 h-screen w-screen bg-black bg-opacity-95 z-[100] p-6 flex flex-col gap-6 text-sm font-medium md:hidden transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-end">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-lime-400 cursor-pointer"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replace(/\s+/g, "")}`}
-                className="text-white text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {link}
-              </a>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <X size={28} />
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-6 items-center justify-center flex-1 text-base sm:text-xl">
+          <a
+            href="https://www.gamesd.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-home"></i>{" "}
+            <span className="text-white">Home</span>
+          </a>
+          <a
+            href="https://www.gamesd.app/blog/category/metaverse-games-clone"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-book"></i>{" "}
+            <span className="text-white">Blog</span>
+          </a>
+          <a
+            href="https://www.gamesd.app/news"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-newspaper"></i>{" "}
+            <span className="text-white">News</span>
+          </a>
+          <a
+            href="https://www.gamesd.app/announcement"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lime-400 hover:text-white flex items-center gap-2"
+          >
+            <i className="fa fa-bullhorn"></i>{" "}
+            <span className="text-white">Announcement</span>
+          </a>
+        </div>
+      </nav>
     </header>
   );
 }

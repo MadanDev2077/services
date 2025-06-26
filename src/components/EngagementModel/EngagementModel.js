@@ -80,7 +80,7 @@ export default function EngagementModels() {
   return (
     <section ref={containerRef} className="bg-gray  container">
       <div ref={leftContentRef} className="max-w-6xl mx-auto ">
-        <h2 className="text-4xl md:text-6xl font-light text-[#1d1d1f] leading-tight">
+        <h2 className="text-4xl md:text-6xl font-light title-color leading-tight">
           ENGAGEMENT
           <br /> MODELS
         </h2>
@@ -93,7 +93,7 @@ export default function EngagementModels() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`grid grid-cols-[auto_1fr] gap-3 md:gap-x-4 lg:gap-x-6 xl:gap-x-7 }`}
+            className={`grid grid-cols-[auto_1fr] gap-3 md:gap-x-4 lg:gap-x-6 xl:gap-x-7 title-color }`}
           >
             <img
               src={card.icon.src}
@@ -101,10 +101,10 @@ export default function EngagementModels() {
               className="w-12 h-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-17 lg:w-17 xl:h-18 xl:w-18"
             />
             <div className="flex flex-col gap-y-1 sm:gap-y-2 md:gap-y-3 lg:gap-y-4 xl:gap-y-6">
-              <h3 className="text-lg font-bold uppercase text-[#1d1d1f] mb-2 tracking-wide">
+              <h3 className="text-lg font-bold uppercase  mb-2 tracking-wide">
                 {card.title}
               </h3>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base leading-relaxed">
                 {card.description}
               </p>
             </div>

@@ -170,10 +170,10 @@ const Industries = () => {
   }, [swiperReady]);
 
   return (
-    <section ref={containerRef} className="container bg-orange">
+    <section ref={containerRef} className="container bg-gray">
       {/* Header */}
       <div className="flex justify-between items-center mb-12">
-        <h2 ref={titleRef} className="section-title">
+        <h2 ref={titleRef} className="section-title title-color">
           Transforming businesses
         </h2>
         <div className="flex justify-end gap-4">

@@ -19,7 +19,7 @@ const ImageCarousal = () => {
               },
               {
                 title: "Success Stories",
-                className: "",
+                className: "title-color",
                 stacktitle: true,
               },
             ]}

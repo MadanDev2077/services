@@ -237,7 +237,7 @@ const ServiceSection = () => {
   const [selected, setSelected] = useState("Software Development");
 
   return (
-    <div className="flex flex-col lg:flex-row  lg:h-screen bg-orange">
+    <div className="flex flex-col lg:flex-row  lg:h-screen bg-gray">
       {/* Left Menu */}
       <div className="w-full lg:w-[500px] xl:w-[600px] bg-[#f95700] p-10">
         <h2 className="section-title font-bold mb-6">
@@ -259,7 +259,7 @@ const ServiceSection = () => {
       </div>
 
       {/* Right Content */}
-      <div className="w-full lg:w-[60%] p-10 overflow-auto flex flex-col">
+      <div className="w-full lg:w-[60%] p-10 overflow-auto flex flex-col title-color">
         <AnimatePresence mode="wait">
           <motion.div
             key={selected}
@@ -272,7 +272,9 @@ const ServiceSection = () => {
             <h2 className="text-xl xl:text-2xl font-bold mb-4">
               {serviceData[selected].title}
             </h2>
-            <p className="mb-6 desc">{serviceData[selected].description}</p>
+            <p className="mb-6 desc title-color">
+              {serviceData[selected].description}
+            </p>
             {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
             <StackedCards servicess={serviceData[selected]} />
             {/* {serviceData[selected].points.map((point, index) => (

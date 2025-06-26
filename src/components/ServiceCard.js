@@ -4,10 +4,12 @@ export const ServiceCard = ({ heading, text, subtitle, items = [] }) => {
       className={`bg-white rounded-2xl shadow-xl border border-gray-100 p-8 h-96 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2}`}
     >
       <div className="h-full flex flex-col">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">{heading}</h3>
+        <h3 className="text-2xl font-bold title-color mb-4">{heading}</h3>
 
         {text && (
-          <p className="text-gray-600 mb-6 text-sm leading-relaxed">{text}</p>
+          <p className="text-gray-600 mb-6 text-sm leading-relaxed title-color">
+            {text}
+          </p>
         )}
 
         <div className="flex-1">

@@ -70,14 +70,17 @@ export default function Testimonials() {
         }}
       ></Swiper> */}
         {testimonials.map((t, index) => (
-          <SwiperSlide key={index} className="testimonial-slide select-none">
-            <div className="testi_parent transition-transform duration-300 ease-in-out bg-white rounded-3xl shadow-lg p-6 flex flex-col md:flex-row gap-6 items-center w-[85vw] max-w-[800px] mx-auto sm:w-[400px] md:w-[250px] lg:w-[300px]">
+          <SwiperSlide
+            key={index}
+            className="testimonial-slide select-none title-color"
+          >
+            <div className="testi_parent  transition-transform duration-300 ease-in-out bg-white rounded-3xl shadow-lg p-6 flex flex-col md:flex-row gap-6 items-center w-[85vw] max-w-[800px] mx-auto sm:w-[400px] md:w-[250px] lg:w-[300px]">
               <div className=" space-y-2 flex min-h-[90px] flex-col flex-1">
                 <div className="space-y-2 flex-1">
                   <div className=" flex gap-x-2 items-center">
                     <h3 className=" font-semibold ">{t.title}</h3>
                   </div>
-                  <p className="desc mb-4">{t.desc}</p>
+                  <p className="desc title-color mb-4">{t.desc}</p>
                 </div>
               </div>
             </div>

@@ -81,10 +81,7 @@ const DevelopermentProcess = () => {
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="container bg-[#f7f7f9] overflow-hidden"
-    >
+    <section ref={containerRef} className="container bg-pink overflow-hidden">
       {/* Title and Description */}
       <div className="dev-title">
         <TitleWithDesc
@@ -93,7 +90,7 @@ const DevelopermentProcess = () => {
           titles={[
             {
               title: "Our Development Process",
-              className: "section-title !mb-0",
+              className: " !mb-0",
               stacktitle: false,
             },
           ]}

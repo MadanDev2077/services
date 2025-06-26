@@ -66,12 +66,15 @@ const CryptoHero = () => {
       <div className="mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div ref={leftContentRef} className="space-y-8 z-10 relative">
+          <div
+            ref={leftContentRef}
+            className="space-y-8 z-10 relative title-color"
+          >
             <div className="space-y-6">
-              <h1 className="section-title font-bold text-gray-900 leading-tight">
+              <h1 className="section-title font-bold  leading-tight">
                 Software Development Company
               </h1>
-              <p className="desc !text-black leading-relaxed">
+              <p className="desc !title-color leading-relaxed">
                 At FixyAds, we're a leading software development company
                 specializing in enterprise solutions. We go beyond development,
                 offering visionary software solutions tailored to your unique

@@ -17,6 +17,7 @@ import ai from "../assets/Images/section/artificialintelligence.webp";
 import metaverse from "../assets/Images/section/metaverce.webp";
 import crypto from "../assets/Images/section/laptop.webp";
 import RoundedButton from "./CommonLayouts/RoundedButton";
+import Header from "./Home/Banner/Header";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,15 +106,18 @@ export default function CryptoBanner() {
   return (
     <section
       ref={bannerRef}
-      className="min-h-screen container justify-center md:justify-between overflow-x-hidden flex flex-col gap-x-10 md:flex-row items-center  px-6 md:px-16 py-12 bg-gray"
+      className="min-h-screen container !pt-0 justify-center md:justify-between overflow-x-hidden flex flex-col gap-x-10 md:flex-row items-center  px-6 md:px-16 py-12 bg-gray"
     >
+      <Header />
       {/* LEFT */}
       <div className="crypto-left md:w-[40%] w-full text-center md:text-left space-y-6">
-        <p className="font-semibold">Digital Transformation Company</p>
-        <h1 className="banner-title font-bold text-slate-900 leading-tight text-4xl md:text-5xl">
+        <p className="font-semibold title-color">
+          Digital Transformation Company
+        </p>
+        <h1 className=" font-bold title-color leading-tight text-4xl md:text-5xl">
           {bannerData[activeIndex].title}
         </h1>
-        <p className="text-gray-700 text-lg">
+        <p className="text-lg title-color">
           {bannerData[activeIndex].description}
         </p>
         <RoundedButton text={"Learn More"} />

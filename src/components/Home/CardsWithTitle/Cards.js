@@ -69,7 +69,7 @@ const Cards = () => {
             },
             {
               title: " Software Development Company",
-              className: "w-full md:w-[90%] lg:w-[90%] xl:w-[80%]",
+              className: "w-full md:w-[90%] lg:w-[90%] xl:w-[80%] ",
               stacktitle: true,
             },
           ]}

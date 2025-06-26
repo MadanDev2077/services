@@ -79,7 +79,7 @@ const RightIMage = () => {
               },
               {
                 title: "Not just code",
-                className: "",
+                className: "title-color",
                 stacktitle: true,
               },
             ]}

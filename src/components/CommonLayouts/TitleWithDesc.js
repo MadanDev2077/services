@@ -16,7 +16,7 @@ const TitleWithDesc = ({
         {titles?.map((item, index) => (
           <span
             key={index}
-            className={`font-bold ${item?.className ?? ""} ${
+            className={`font-bold title-color ${item?.className ?? ""} ${
               item?.stacktitle ? "block" : ""
             }`}
           >
@@ -26,7 +26,7 @@ const TitleWithDesc = ({
       </HeadingTag>
       {desc && (
         <description
-          className={`${descClass} desc w-full !md:w-[80%] !lg:w-[60%] !xl:w-[40%]`}
+          className={`${descClass} desc w-full !md:w-[80%] !lg:w-[60%] !xl:w-[40%] title-color`}
         >
           {desc}
         </description>

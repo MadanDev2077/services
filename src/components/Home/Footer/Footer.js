@@ -32,10 +32,10 @@ const Footer = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <footer className="bg-[#181818] ">
+    <footer className=" ">
       <div
         ref={containerRef}
-        className="container !mt-30 sm:!mt-40  md:!mt-[120px] lg:!mt-[160px] xl:!mt-[170px] "
+        className="container !mt-30 sm:!mt-40  md:!mt-[120px] lg:!mt-[160px] xl:!mt-[170px] bg-[#181818]"
       >
         <SignUpCard />
         <div className="flex flex-col md:flex-row gap-y-5 sm:gap-y-10 gap-x-2 items-baseline py-10 md:py-14 lg:py-16 xl:py-20">

@@ -106,7 +106,7 @@ const ProcessFlowSwiper = ({ portfolioItems }) => {
               className="max-w-sm md:max-w-md lg:max-w-lg select-none"
             >
               <div
-                className={`relative h-full rounded-2xl shadow-2xl overflow-hidden group transition-all duration-500 border-[1px]`}
+                className={`relative title-color h-full rounded-2xl shadow-2xl overflow-hidden group transition-all duration-500 border-[1px]`}
               >
                 <div className="relative z-10 h-full flex flex-col justify-center items-center p-8 text-center rounded-2xl transition-all duration-500">
                   <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 transition-colors duration-300 ">

@@ -92,7 +92,7 @@ export const StackedCards = ({ servicess }) => {
             rotate: [0, 0, 10],
           },
         }}
-        className="w-full h-[450px]"
+        className="w-full h-[450px] "
       >
         {servicess?.points?.map((service, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">
