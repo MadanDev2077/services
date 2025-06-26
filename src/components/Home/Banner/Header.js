@@ -29,40 +29,28 @@ export default function HeaderNav() {
       className="w-full px-4 py-3 bg-transparent fixed top-5 z-[100] left-0"
     >
       <div
-        className={`flex justify-between items-center max-w-7xl mx-auto nav`}
+        className={`flex justify-between items-center w-full  md:max-w-7xl mx-auto nav`}
       >
-        <a href="https://www.gamesd.app" className="flex items-center gap-2">
+        <a className="flex items-center gap-2">
           <span className="text-white text-base md:text-[18px] lg:text-[19px] font-semibold">
             TechnoSpots
           </span>
         </a>
 
         <nav className="hidden md:flex gap-6 text-sm font-medium items-center">
-          <a
-            href="https://www.gamesd.app"
-            className="text-lime-400 hover:text-white flex items-center gap-2"
-          >
+          <a className="text-lime-400 hover:text-white flex items-center gap-2">
             <i className="fa fa-home"></i>{" "}
             <span className="text-white">Home</span>
           </a>
-          <a
-            href="https://www.gamesd.app/blog/category/metaverse-games-clone"
-            className="text-lime-400 hover:text-white flex items-center gap-2"
-          >
+          <a className="text-lime-400 hover:text-white flex items-center gap-2">
             <i className="fa fa-book"></i>{" "}
             <span className="text-white">Blog</span>
           </a>
-          <a
-            href="https://www.gamesd.app/news"
-            className="text-lime-400 hover:text-white flex items-center gap-2"
-          >
+          <a className="text-lime-400 hover:text-white flex items-center gap-2">
             <i className="fa fa-newspaper"></i>{" "}
             <span className="text-white">News</span>
           </a>
-          <a
-            href="https://www.gamesd.app/announcement"
-            className="text-lime-400 hover:text-white flex items-center gap-2"
-          >
+          <a className="text-lime-400 hover:text-white flex items-center gap-2">
             <i className="fa fa-bullhorn"></i>{" "}
             <span className="text-white">Announcement</span>
           </a>
@@ -104,7 +92,6 @@ export default function HeaderNav() {
 
         <div className="flex flex-col gap-6 items-center justify-center flex-1 text-base sm:text-xl">
           <a
-            href="https://www.gamesd.app"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lime-400 hover:text-white flex items-center gap-2"
@@ -113,7 +100,6 @@ export default function HeaderNav() {
             <span className="text-white">Home</span>
           </a>
           <a
-            href="https://www.gamesd.app/blog/category/metaverse-games-clone"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lime-400 hover:text-white flex items-center gap-2"
@@ -122,7 +108,6 @@ export default function HeaderNav() {
             <span className="text-white">Blog</span>
           </a>
           <a
-            href="https://www.gamesd.app/news"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lime-400 hover:text-white flex items-center gap-2"
@@ -131,7 +116,6 @@ export default function HeaderNav() {
             <span className="text-white">News</span>
           </a>
           <a
-            href="https://www.gamesd.app/announcement"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lime-400 hover:text-white flex items-center gap-2"
