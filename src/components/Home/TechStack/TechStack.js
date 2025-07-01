@@ -52,36 +52,38 @@ const TechStack = () => {
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="relative bg-gray py-24 overflow-hidden container"
-    >
-      <div ref={rightImageRef} className="z-20 relative">
-        {/* Title Section */}
-        <TitleWithDesc
-          ParentClass="text-center mb-0  z-20 relative h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[60vh] xl:h-[65vh]"
-          headerClass="flex md:gap-y-2 flex-col"
-          titles={[
-            {
-              title: "Our Technology Stack",
-              className: "section-title title-color !mb-0",
-              stacktitle: false,
-            },
-          ]}
-          descClass="w-full md:w-[60%] lg:w-[40%] xl:w-[30%] inline-block text-center"
-          desc="We integrate a diverse range of industry-leading technologies to create applications that are unique and future-ready."
-        />
-      </div>
-
+    <section className="bg-gray">
       <div
-        ref={leftContentRef}
-        className="absolute inset-0 bg-gray  p-2 flex items-center justify-center"
+        ref={containerRef}
+        className="relative py-24 overflow-hidden container"
       >
-        <img
-          src={languageImage.src}
-          alt="tech-icon"
-          className="w-full h-full object-contain"
-        />
+        <div ref={rightImageRef} className="z-20 relative">
+          {/* Title Section */}
+          <TitleWithDesc
+            ParentClass="text-center mb-0  z-20 relative h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[60vh] xl:h-[65vh]"
+            headerClass="flex md:gap-y-2 flex-col"
+            titles={[
+              {
+                title: "Our Technology Stack",
+                className: "section-title title-color !mb-0",
+                stacktitle: false,
+              },
+            ]}
+            descClass="w-full md:w-[60%] lg:w-[40%] xl:w-[30%] inline-block text-center"
+            desc="We integrate a diverse range of industry-leading technologies to create applications that are unique and future-ready."
+          />
+        </div>
+
+        <div
+          ref={leftContentRef}
+          className="absolute inset-0 bg-gray  p-2 flex items-center justify-center"
+        >
+          <img
+            src={languageImage.src}
+            alt="tech-icon"
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
     </section>
   );

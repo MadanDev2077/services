@@ -104,57 +104,59 @@ export default function CryptoBanner() {
   }, []);
 
   return (
-    <section
-      ref={bannerRef}
-      className="min-h-screen container !pt-0 justify-center md:justify-between overflow-x-hidden flex flex-col gap-x-10 md:flex-row items-center  px-6 md:px-16 py-12 bg-gray"
-    >
-      <Header />
-      {/* LEFT */}
-      <div className="crypto-left md:w-[40%] w-full text-center md:text-left space-y-6">
-        <p className="font-semibold title-color">
-          Digital Transformation Company
-        </p>
-        <h1 className=" font-bold title-color leading-tight text-4xl md:text-5xl">
-          {bannerData[activeIndex].title}
-        </h1>
-        <p className="text-lg title-color">
-          {bannerData[activeIndex].description}
-        </p>
-        <RoundedButton text={"Learn More"} />
-      </div>
+    <section className="bg-gray">
+      <div
+        ref={bannerRef}
+        className="min-h-screen container !pt-0 justify-center md:justify-between overflow-x-hidden flex flex-col gap-x-10 md:flex-row items-center  px-6 md:px-16 py-12"
+      >
+        <Header />
+        {/* LEFT */}
+        <div className="crypto-left md:w-[40%] w-full text-center md:text-left space-y-6">
+          <p className="font-semibold title-color">
+            Digital Transformation Company
+          </p>
+          <h1 className=" font-bold title-color leading-tight text-4xl md:text-5xl">
+            {bannerData[activeIndex].title}
+          </h1>
+          <p className="text-lg title-color">
+            {bannerData[activeIndex].description}
+          </p>
+          <RoundedButton text={"Learn More"} />
+        </div>
 
-      {/* RIGHT */}
-      <div className="crypto-right hidden md:flex md:flex-col md:w-[60%] w-full mt-10 md:mt-0 relative">
-        <Swiper
-          direction="horizontal"
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          pagination={{
-            clickable: true,
-            el: ".swiper-pagination-custom",
-          }}
-          onSlideChange={(swiper) => {
-            setActiveIndex(swiper.realIndex);
-          }}
-          modules={[Autoplay, Pagination]}
-          grabCursor={true}
-          className="w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden z-10"
-        >
-          {bannerData.map((item, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-contain rounded-lg"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* RIGHT */}
+        <div className="crypto-right hidden md:flex md:flex-col md:w-[60%] w-full mt-10 md:mt-0 relative">
+          <Swiper
+            direction="horizontal"
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{
+              clickable: true,
+              el: ".swiper-pagination-custom",
+            }}
+            onSlideChange={(swiper) => {
+              setActiveIndex(swiper.realIndex);
+            }}
+            modules={[Autoplay, Pagination]}
+            grabCursor={true}
+            className="w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden z-10"
+          >
+            {bannerData.map((item, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-        {/* Pagination Dots Below Swiper */}
-        <div className="swiper-pagination-custom mt-4 self-center !w-auto flex gap-2 z-0 justify-center" />
+          {/* Pagination Dots Below Swiper */}
+          <div className="swiper-pagination-custom mt-4 self-center !w-auto flex gap-2 z-0 justify-center" />
+        </div>
       </div>
     </section>
   );

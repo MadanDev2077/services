@@ -170,78 +170,80 @@ const Industries = () => {
   }, [swiperReady]);
 
   return (
-    <section ref={containerRef} className="container bg-gray">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-12">
-        <h2 ref={titleRef} className="section-title title-color">
-          Transforming businesses
-        </h2>
-        <div className="flex justify-end gap-4">
-          <button
-            ref={prevRef}
-            className="group cursor-pointer"
-            aria-label="Previous Slide"
-          >
-            <ArrowLeft className="w-6 h-6 text-black group-hover:-translate-x-1 transition-transform" />
-          </button>
-          <button
-            ref={nextRef}
-            className="group cursor-pointer"
-            aria-label="Next Slide"
-          >
-            <ArrowRight className="w-6 h-6 text-black group-hover:translate-x-1 transition-transform" />
-          </button>
+    <section className="bg-gray">
+      <section ref={containerRef} className="container bg-gray">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-12">
+          <h2 ref={titleRef} className="section-title title-color">
+            Transforming businesses
+          </h2>
+          <div className="flex justify-end gap-4">
+            <button
+              ref={prevRef}
+              className="group cursor-pointer"
+              aria-label="Previous Slide"
+            >
+              <ArrowLeft className="w-6 h-6 text-black group-hover:-translate-x-1 transition-transform" />
+            </button>
+            <button
+              ref={nextRef}
+              className="group cursor-pointer"
+              aria-label="Next Slide"
+            >
+              <ArrowRight className="w-6 h-6 text-black group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Swiper */}
-      {swiperReady && (
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={24}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            if (typeof swiper.params.navigation !== "boolean") {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }
-          }}
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1200: { slidesPerView: 4 },
-          }}
-          loop={true}
-          className="relative"
-        >
-          {transformingData.map((item, index) => (
-            <SwiperSlide key={item.id}>
-              <div
-                ref={(el) => {
-                  if (el) slideRefs.current[index] = el;
-                }}
-                className="group overflow-hidden cursor-pointer rounded-lg relative"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105 rounded-lg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-lg" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <h3 className="text-white text-lg font-semibold">
-                    {item.title}
-                  </h3>
+        {/* Swiper */}
+        {swiperReady && (
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={24}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              if (typeof swiper.params.navigation !== "boolean") {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+              1200: { slidesPerView: 4 },
+            }}
+            loop={true}
+            className="relative"
+          >
+            {transformingData.map((item, index) => (
+              <SwiperSlide key={item.id}>
+                <div
+                  ref={(el) => {
+                    if (el) slideRefs.current[index] = el;
+                  }}
+                  className="group overflow-hidden cursor-pointer rounded-lg relative"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105 rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-lg" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                    <h3 className="text-white text-lg font-semibold">
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+      </section>
     </section>
   );
 };

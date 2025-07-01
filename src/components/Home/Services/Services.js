@@ -237,47 +237,48 @@ const ServiceSection = () => {
   const [selected, setSelected] = useState("Software Development");
 
   return (
-    <div className="flex flex-col lg:flex-row  lg:h-screen bg-gray">
-      {/* Left Menu */}
-      <div className="w-full lg:w-[500px] xl:w-[600px] bg-[#f95700] p-10">
-        <h2 className="section-title font-bold mb-6">
-          Discover Our FixyAds Services – We Build Anything You Imagine.
-        </h2>
-        <ul className="space-y-4">
-          {Object.keys(serviceData).map((service) => (
-            <li
-              key={service}
-              onClick={() => setSelected(service)}
-              className={`cursor-pointer py-2 px-3 font-medium rounded ${
-                selected === service ? " bg-orange" : ""
-              }`}
-            >
-              {service}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section className="max-w-[1700px] bg-gray mx-auto">
+      <div className="flex flex-col lg:flex-row md:max-h-[700px] md:min-h-[700px]">
+        {/* Left Menu */}
+        <div className="w-full lg:w-[500px] xl:w-[600px] bg-[#f95700] p-10 overflow-y-auto">
+          <h2 className="section-title font-bold mb-6">
+            Discover Our FixyAds Services – We Build Anything You Imagine.
+          </h2>
+          <ul className="space-y-4">
+            {Object.keys(serviceData).map((service) => (
+              <li
+                key={service}
+                onClick={() => setSelected(service)}
+                className={`cursor-pointer py-2 px-3 font-medium rounded ${
+                  selected === service ? " bg-orange" : ""
+                }`}
+              >
+                {service}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {/* Right Content */}
-      <div className="w-full lg:w-[60%] p-10 overflow-auto flex flex-col title-color">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selected}
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -30 }}
-            transition={{ duration: 0.4 }}
-            className="flex-1 flex flex-col"
-          >
-            <h2 className="text-xl xl:text-2xl font-bold mb-4">
-              {serviceData[selected].title}
-            </h2>
-            <p className="mb-6 desc title-color">
-              {serviceData[selected].description}
-            </p>
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
-            <StackedCards servicess={serviceData[selected]} />
-            {/* {serviceData[selected].points.map((point, index) => (
+        {/* Right Content */}
+        <div className="w-full lg:w-[60%] p-10 overflow-auto flex flex-col title-color">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selected}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -30 }}
+              transition={{ duration: 0.4 }}
+              className="flex-1 flex flex-col"
+            >
+              <h2 className="text-xl xl:text-2xl font-bold mb-4">
+                {serviceData[selected].title}
+              </h2>
+              <p className="mb-6 desc title-color">
+                {serviceData[selected].description}
+              </p>
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+              <StackedCards servicess={serviceData[selected]} />
+              {/* {serviceData[selected].points.map((point, index) => (
                 <div
                   key={index}
                   className={`border p-4 rounded shadow-sm ${
@@ -290,11 +291,12 @@ const ServiceSection = () => {
                   <p className="desc">{point.text}</p>
                 </div>
               ))} */}
-            {/* </div> */}
-          </motion.div>
-        </AnimatePresence>
+              {/* </div> */}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

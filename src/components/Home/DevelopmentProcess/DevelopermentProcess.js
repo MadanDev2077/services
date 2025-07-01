@@ -81,25 +81,27 @@ const DevelopermentProcess = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="container bg-pink overflow-hidden">
-      {/* Title and Description */}
-      <div className="dev-title">
-        <TitleWithDesc
-          ParentClass="text-center mb-2 sm:mb-4 md:mb-8 lg:mb-10 lg:mb-14 xl:mb-18"
-          headerClass="flex md:gap-y-2 flex-col"
-          titles={[
-            {
-              title: "Our Development Process",
-              className: " !mb-0",
-              stacktitle: false,
-            },
-          ]}
-        />
-      </div>
+    <section className="bg-pink">
+      <div ref={containerRef} className="container  overflow-hidden">
+        {/* Title and Description */}
+        <div className="dev-title">
+          <TitleWithDesc
+            ParentClass="text-center mb-2 sm:mb-4 md:mb-8 lg:mb-10 lg:mb-14 xl:mb-18"
+            headerClass="flex md:gap-y-2 flex-col"
+            titles={[
+              {
+                title: "Our Development Process",
+                className: " !mb-0",
+                stacktitle: false,
+              },
+            ]}
+          />
+        </div>
 
-      {/* Swiper Section */}
-      <div className="dev-swiper">
-        <ProcessFlowSwiper portfolioItems={Data} />
+        {/* Swiper Section */}
+        <div className="dev-swiper">
+          <ProcessFlowSwiper portfolioItems={Data} />
+        </div>
       </div>
     </section>
   );

@@ -78,38 +78,40 @@ export default function EngagementModels() {
   ];
 
   return (
-    <section ref={containerRef} className="bg-gray  container">
-      <div ref={leftContentRef} className="max-w-6xl mx-auto ">
-        <h2 className="text-4xl md:text-6xl font-light title-color leading-tight">
-          ENGAGEMENT
-          <br /> MODELS
-        </h2>
-      </div>
+    <section className="bg-gray">
+      <div ref={containerRef} className="  container">
+        <div ref={leftContentRef} className="max-w-6xl mx-auto ">
+          <h2 className="text-4xl md:text-6xl font-light title-color leading-tight">
+            ENGAGEMENT
+            <br /> MODELS
+          </h2>
+        </div>
 
-      <div
-        ref={rightImageRef}
-        className="mt-5 sm:mt-8 md:mt-12 lg:mt-14 xl:mt-16 space-y-3 md:space-y-6 lg:space-y-8 xl:space-y-10 max-w-4xl mx-auto "
-      >
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className={`grid grid-cols-[auto_1fr] gap-3 md:gap-x-4 lg:gap-x-6 xl:gap-x-7 title-color }`}
-          >
-            <img
-              src={card.icon.src}
-              alt={card.title}
-              className="w-12 h-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-17 lg:w-17 xl:h-18 xl:w-18"
-            />
-            <div className="flex flex-col gap-y-1 sm:gap-y-2 md:gap-y-3 lg:gap-y-4 xl:gap-y-6">
-              <h3 className="text-lg font-bold uppercase  mb-2 tracking-wide">
-                {card.title}
-              </h3>
-              <p className="text-sm md:text-base leading-relaxed">
-                {card.description}
-              </p>
+        <div
+          ref={rightImageRef}
+          className="mt-5 sm:mt-8 md:mt-12 lg:mt-14 xl:mt-16 space-y-3 md:space-y-6 lg:space-y-8 xl:space-y-10 max-w-4xl mx-auto "
+        >
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className={`grid grid-cols-[auto_1fr] gap-3 md:gap-x-4 lg:gap-x-6 xl:gap-x-7 title-color }`}
+            >
+              <img
+                src={card.icon.src}
+                alt={card.title}
+                className="w-12 h-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-17 lg:w-17 xl:h-18 xl:w-18"
+              />
+              <div className="flex flex-col gap-y-1 sm:gap-y-2 md:gap-y-3 lg:gap-y-4 xl:gap-y-6">
+                <h3 className="text-lg font-bold uppercase  mb-2 tracking-wide">
+                  {card.title}
+                </h3>
+                <p className="text-sm md:text-base leading-relaxed">
+                  {card.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

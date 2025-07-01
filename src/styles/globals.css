@@ -218,4 +218,6 @@ body {
   align-items: center;
   padding: 14px 1rem;
   justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
 }
